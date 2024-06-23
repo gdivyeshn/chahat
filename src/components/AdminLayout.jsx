@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import {
   HomeIcon,
@@ -58,6 +58,11 @@ const AdminLayout = () => {
       link: "/super_admin/dashboard/subscribe-lead",
     },
   ];
+  useEffect(() => {
+    if (!localStorage.getItem("token")) {
+      navigate("/super_admin/login");
+    }
+  }, []);
   return (
     <div
       className={`md:flex h-screen ${
