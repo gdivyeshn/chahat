@@ -164,14 +164,31 @@ const AdminBlogs = () => {
                         allBlogs.map((item, ind) => (
                           <tr key={ind}>
                             <td className="p-2 min-w-48">
-                              <div
+                              <div className="flex items-center">
+                                <div className="w-10 h-10 flex-shrink-0 mr-2 sm:mr-3">
+                                  <img
+                                    className="rounded-full object-contain h-10 w-10 border border-orange-500"
+                                    src={item.imgUri}
+                                    alt="Alex Shatov"
+                                  />
+                                </div>
+                                <div
+                                  onClick={() => {
+                                    navigate(`./edit-blog?id=${item._id}`);
+                                  }}
+                                  className="font-medium text-gray-800 cursor-pointer"
+                                >
+                                  {item.title}
+                                </div>
+                              </div>
+                              {/* <div
                                 onClick={() => {
                                   navigate(`./edit-blog?id=${item._id}`);
                                 }}
                                 className="font-medium text-gray-800 cursor-pointer"
                               >
                                 {item.title}
-                              </div>
+                              </div> */}
                             </td>
                             <td className="p-2">
                               <div className="text-left line-clamp-2">
