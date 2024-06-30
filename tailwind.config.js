@@ -9,6 +9,7 @@ module.exports = {
         MasalaPng: "url('/src/images/masala.png')",
         FlowerPng: "url('/src/images/flower.png')",
         AboutBannerPng: "url('/src/images/about-banner.png')",
+        VegetablesPng: "url('/src/images/vegetables.png')",
       },
     },
     colors: {

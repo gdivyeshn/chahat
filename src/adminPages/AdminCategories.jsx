@@ -8,6 +8,7 @@ import { CategoryAPI, ImageAPI } from "../API";
 import Loading from "../components/Loading";
 import DeleteModel from "../components/DeleteModel";
 import FloatNotification from "../components/FloatNotification";
+import ImageUplaod from "../components/ImageUpload";
 
 const AdminCategories = () => {
   const [showModel, setShowModel] = useState(false);
@@ -33,10 +34,12 @@ const AdminCategories = () => {
     handleSubmit,
     setFieldError,
     setFieldValue,
+    setValues,
   } = useFormik({
-    initialValues: { category_name: "" },
+    initialValues: { category_name: "", imgUri: "" },
     validationSchema: yup.object().shape({
       category_name: yup.string().required("Category name must be required"),
+      imgUri: yup.string().required("Category image must be required"),
     }),
     onSubmit: () => {
       isEdit ? updateCategory() : addCategory();
@@ -54,6 +57,7 @@ const AdminCategories = () => {
         },
         body: JSON.stringify({
           name: values.category_name,
+          imgUri: values.imgUri,
         }),
       })
         .then((res) => res.json())
@@ -108,6 +112,7 @@ const AdminCategories = () => {
         body: JSON.stringify({
           _id: categoryId,
           name: values.category_name,
+          imgUri: values.imgUri,
         }),
       })
         .then((res) => res.json())
@@ -195,9 +200,7 @@ const AdminCategories = () => {
         </div>
         <div className="flex flex-col lg:flex-row lg:items-center gap-3">
           <button
-            onClick={() => {
-              setShowModel(true);
-            }}
+            onClick={() => setShowModel(true)}
             className="bg-primaryColor flex gap-2 items-center hover:bg-lightColor text-white font-bold py-2 px-4 rounded"
           >
             <PlusIcon className="h-5 w-5" />
@@ -247,10 +250,10 @@ const AdminCategories = () => {
                               <div className="flex gap-5 justify-center">
                                 <button
                                   onClick={() => {
-                                    setFieldValue(
-                                      "category_name",
-                                      category.name
-                                    );
+                                    setValues({
+                                      category_name: category.name,
+                                      imgUri: category.imgUri,
+                                    });
                                     setCategoryId(category._id);
                                     setShowModel(true);
                                     setIsEdit(true);
@@ -302,6 +305,19 @@ const AdminCategories = () => {
           showModel={showModel}
         >
           <form onSubmit={handleSubmit}>
+            <div className="w-full flex justify-start mt-5">
+              <ImageUplaod
+                value={values.imgUri ?? ""}
+                setValue={(e) => upload("imgUri", e)}
+                heigth="h-full"
+                name="image"
+                label="Upload Category Image"
+                id="image"
+              />
+            </div>
+            {errors.imgUri && touched.imgUri && (
+              <p className="text-sm text-red-500 mt-1">{errors.imgUri}</p>
+            )}
             <div className="my-5">
               <InputText
                 type="text"

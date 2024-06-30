@@ -29,27 +29,29 @@ const ImageUplaod = ({
         id="image-preview"
         className="p-4 bg-gray-100 border-dashed border-2 h-full border-gray-400 rounded-lg flex w-full items-center justify-center mx-auto text-center cursor-pointer"
       >
-        <div className="cursor-pointer">
-          {value || disabled ? (
-            value ? (
-              <img src={value} alt="img" className={`w-full`} />
-            ) : (
-              "--"
-            )
+        {value || disabled ? (
+          value ? (
+            <img
+              src={value}
+              alt="img"
+              className={`max-h-full max-w-full object-cover`}
+            />
           ) : (
-            <>
-              <div className="flex justify-center">
-                <ArrowUpOnSquareIcon className="h-8 w-8 text-gray-500" />
-              </div>
-              <h5 className="mb-2 text-lg font-bold tracking-tight text-gray-700">
-                {label}
-              </h5>
-              <p className="font-normal text-sm text-gray-400 md:px-6">
-                Upload your image
-              </p>
-            </>
-          )}
-        </div>
+            "--"
+          )
+        ) : (
+          <div>
+            <div className="flex justify-center">
+              <ArrowUpOnSquareIcon className="h-8 w-8 text-gray-500" />
+            </div>
+            <h5 className="mb-2 text-lg font-bold tracking-tight text-gray-700">
+              {label}
+            </h5>
+            <p className="font-normal text-sm text-gray-400 md:px-6">
+              Upload your image
+            </p>
+          </div>
+        )}
       </label>
     </div>
   );

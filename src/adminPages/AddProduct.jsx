@@ -9,6 +9,7 @@ import Loading from "../components/Loading";
 import { useNavigate, useLocation } from "react-router-dom";
 import ImageUpload from "../components/ImageUpload";
 import { Rating } from "react-simple-star-rating";
+import MDInput from "../components/MDInput";
 
 const AddProduct = () => {
   const [allCategories, setAllCategories] = useState([]);
@@ -38,6 +39,7 @@ const AddProduct = () => {
       category: "",
       imgUri: "",
       rating: 0,
+      description: "",
     },
     validationSchema: yup.object().shape({
       name: yup.string().required("Product name must be required"),
@@ -65,6 +67,7 @@ const AddProduct = () => {
           if (data?.status === "success") {
             setAllCategories(data.data);
             setFieldValue("category", data.data[0]._id);
+            if (isEdit) getSingleProduct();
           } else {
             setShowNotification({
               show: true,
@@ -109,15 +112,6 @@ const AddProduct = () => {
         });
     }
   };
-  useEffect(() => {
-    if (!ignore && isEdit) {
-      getSingleProduct();
-    }
-
-    return () => {
-      ignore = true;
-    };
-  }, [isEdit]);
 
   const addProduct = async () => {
     const token = localStorage.getItem("token");
@@ -134,6 +128,7 @@ const AddProduct = () => {
           category: values.category,
           imgUri: values.imgUri,
           rating: values.rating,
+          description: values.description,
         }),
       })
         .then((res) => res.json())
@@ -169,6 +164,7 @@ const AddProduct = () => {
           category: values.category,
           imgUri: values.imgUri,
           rating: values.rating,
+          description: values.description,
         }),
       })
         .then((res) => res.json())
@@ -334,6 +330,17 @@ const AddProduct = () => {
                 />
               </div>
             </div>
+          </div>
+
+          <div>
+            <label className="block text-gray-800 font-bold">Description</label>
+            <MDInput
+              value={values?.description}
+              onChange={(value) => {
+                setFieldValue("description", value);
+              }}
+              className="mt-2"
+            />
           </div>
 
           <div className="flex mt-8 gap-5 ">

@@ -7,8 +7,11 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import Loading from "../components/Loading";
 import { Rating } from "react-simple-star-rating";
 import filterSvg from "../images/svg/filter.svg";
-import { Combobox, Popover, Transition } from "@headlessui/react";
-import { CheckIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import { Combobox, Transition } from "@headlessui/react";
+import { CheckIcon } from "@heroicons/react/24/outline";
+import FlowerPng from "../images/flower.png";
+import MasalaPng from "../images/masala.png";
+import VegetablesPng from "../images/vegetables.png";
 
 const Namkeen = () => {
   const [loading, setLoading] = useState(false);
@@ -95,7 +98,14 @@ const Namkeen = () => {
     setPage(page + 1);
   };
   return (
-    <div className="flex justify-center">
+    <div
+      className="bg-no-repeat flex justify-center"
+      style={{
+        backgroundImage: `url(${MasalaPng}), url(${FlowerPng}), url(${VegetablesPng})`,
+        backgroundPosition: "left 90px, right 900px, left 2000px",
+        backgroundSize: "250px, 200px, 250px",
+      }}
+    >
       <div className="px-4 py-8 lg:pb-20 w-full lg:w-11/12 xl:w-5/6">
         <div className="flex justify-between items-center">
           <PathChain />
