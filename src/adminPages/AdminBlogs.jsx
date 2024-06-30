@@ -106,7 +106,7 @@ const AdminBlogs = () => {
         <div className="flex flex-col lg:flex-row lg:items-center gap-3">
           <button
             onClick={() => navigate("/super_admin/dashboard/blog/add-blog")}
-            className="bg-orange-400 flex gap-2 items-center hover:bg-orange-500 text-white font-bold py-2 px-4 rounded"
+            className="bg-primaryColor flex gap-2 items-center hover:bg-lightColor text-white font-bold py-2 px-4 rounded"
           >
             <PlusIcon className="h-5 w-5" />
             Add Blog
@@ -167,7 +167,7 @@ const AdminBlogs = () => {
                               <div className="flex items-center">
                                 <div className="w-10 h-10 flex-shrink-0 mr-2 sm:mr-3">
                                   <img
-                                    className="rounded-full object-contain h-10 w-10 border border-orange-500"
+                                    className="rounded-full object-contain h-10 w-10 border border-primaryColor"
                                     src={item.imgUri}
                                     alt="Alex Shatov"
                                   />
@@ -207,7 +207,7 @@ const AdminBlogs = () => {
                                     navigate(`./edit-blog?id=${item._id}`);
                                   }}
                                 >
-                                  <PencilIcon className="w-5 h-5 text-orange-500 hover:text-orange-600" />
+                                  <PencilIcon className="w-5 h-5 text-gray-800" />
                                 </button>
                                 <button
                                   onClick={() => {
@@ -215,7 +215,7 @@ const AdminBlogs = () => {
                                     setBlogId(item._id);
                                   }}
                                 >
-                                  <TrashIcon className="w-5 h-5 text-red-500 hover:text-red-600" />
+                                  <TrashIcon className="w-5 h-5 text-primaryColor" />
                                 </button>
                               </div>
                             </td>

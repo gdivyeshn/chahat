@@ -95,7 +95,7 @@ const Notification = () => {
             >
               <BellIcon className="h-5 w-5" />
               {notification.length > 0 && (
-                <div className="absolute -top-2 -right-1 text-sm  flex justify-center items-center bg-orange-400 rounded-full w-4 h-4">
+                <div className="absolute -top-2 -right-1 text-xs  flex justify-center items-center bg-primaryColor text-white rounded-full w-4 h-4">
                   {notification.length}
                 </div>
               )}
@@ -129,7 +129,7 @@ const Notification = () => {
                             className="flex justify-between items-center"
                           >
                             <div className="flex gap-5">
-                              <div className="bg-orange-200 text-orange-800 h-10 w-10 rounded-full flex justify-center items-center text-lg">
+                              <div className="bg-primaryColor/25 text-primaryColor h-10 w-10 rounded-full flex justify-center items-center text-lg">
                                 {lead?.lead?.name
                                   ? lead?.lead?.name?.slice(0, 1)
                                   : lead?.lead?.email?.slice(0, 1)}
@@ -147,7 +147,7 @@ const Notification = () => {
                               onClick={() => {
                                 updateNotification(lead?._id, lead?.lead?._id);
                               }}
-                              className="text-orange-500 border border-orange-500 w-16 rounded"
+                              className="text-primaryColor border border-primaryColor w-16 rounded"
                             >
                               View
                             </button>

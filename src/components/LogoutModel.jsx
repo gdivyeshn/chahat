@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 import { Dialog, Transition } from "@headlessui/react";
-import { ExclamationTriangleIcon } from "@heroicons/react/24/outline";
+import { ArrowRightStartOnRectangleIcon } from "@heroicons/react/24/outline";
 
 export default function LogOutModel({
   showModal,
@@ -42,7 +42,7 @@ export default function LogOutModel({
                 <div className="relative w-full max-w-lg p-4 mx-auto bg-white rounded-md shadow-lg">
                   <div className="mt-3 sm:flex">
                     <div className="flex items-center justify-center flex-none w-12 h-12 mx-auto bg-orange-100 rounded-full">
-                      <ExclamationTriangleIcon className="h-6 w-6 text-orange-500" />
+                      <ArrowRightStartOnRectangleIcon className="h-6 w-6 text-primaryColor" />
                     </div>
                     <div className="mt-2 text-center sm:ml-4 sm:text-left">
                       <h4 className="text-lg font-medium text-gray-800">
@@ -54,13 +54,13 @@ export default function LogOutModel({
                       </p>
                       <div className="items-center gap-2 mt-3 sm:flex">
                         <button
-                          className="w-full mt-2 p-2.5 flex-1 text-white bg-orange-600 rounded-md outline-none ring-offset-2 ring-orange-600 focus:ring-2"
+                          className="w-full mt-2 p-2.5 flex-1 text-white bg-primaryColor hover:bg-lightColor rounded-md outline-none ring-offset-2 ring-primaryColor focus:ring-2"
                           onClick={handleLogOutModel}
                         >
                           Yes
                         </button>
                         <button
-                          className="w-full mt-2 p-2.5 flex-1 text-gray-800 rounded-md outline-none border ring-offset-2 ring-orange-600 focus:ring-2"
+                          className="w-full mt-2 p-2.5 flex-1 text-gray-800 rounded-md outline-none border ring-offset-2 ring-primaryColor focus:ring-2"
                           onClick={() => setShowModal(false)}
                         >
                           No

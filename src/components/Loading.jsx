@@ -5,8 +5,8 @@ const Loading = () => {
     <div className="grid place-items-center overflow-x-hidden rounded-lg w-20">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
         <circle
-          fill="#FDBA74"
-          stroke="#FDBA74"
+          fill="#EB0029"
+          stroke="#EB0029"
           strokeWidth="15"
           r="15"
           cx="40"
@@ -23,8 +23,8 @@ const Loading = () => {
           ></animate>
         </circle>
         <circle
-          fill="#FDBA74"
-          stroke="#FDBA74"
+          fill="#EB0029"
+          stroke="#EB0029"
           strokeWidth="15"
           r="15"
           cx="100"
@@ -41,8 +41,8 @@ const Loading = () => {
           ></animate>
         </circle>
         <circle
-          fill="#FDBA74"
-          stroke="#FDBA74"
+          fill="#EB0029"
+          stroke="#EB0029"
           strokeWidth="15"
           r="15"
           cx="160"

@@ -106,7 +106,7 @@ const AdminLeads = () => {
             onClick={() => {
               navigate("./add-lead");
             }}
-            className="bg-orange-400 flex gap-2 items-center hover:bg-orange-500 text-white font-bold py-2 px-4 rounded"
+            className="bg-primaryColor flex gap-2 items-center hover:bg-lightColor text-white font-bold py-2 px-4 rounded"
           >
             <PlusIcon className="h-5 w-5" />
             Add Lead
@@ -184,7 +184,7 @@ const AdminLeads = () => {
                                 className={`font-medium text-center ${
                                   (lead?.status === "todo" && "text-red-500") ||
                                   (lead?.status === "in-progress" &&
-                                    "text-orange-500") ||
+                                    "text-primaryColor") ||
                                   (lead?.status === "completed" &&
                                     "text-green-500")
                                 }`}
@@ -206,7 +206,7 @@ const AdminLeads = () => {
                                     navigate(`./edit-lead?id=${lead._id}`);
                                   }}
                                 >
-                                  <PencilIcon className="w-5 h-5 text-orange-500 hover:text-orange-600" />
+                                  <PencilIcon className="w-5 h-5 text-gray-800" />
                                 </button>
                                 <button
                                   onClick={() => {
@@ -214,7 +214,7 @@ const AdminLeads = () => {
                                     setLeadId(lead._id);
                                   }}
                                 >
-                                  <TrashIcon className="w-5 h-5 text-red-500 hover:text-red-600" />
+                                  <TrashIcon className="w-5 h-5 text-primaryColor" />
                                 </button>
                               </div>
                             </td>

@@ -15,11 +15,11 @@ const FloatNotification = ({ showNotification, setShowNotification }) => {
           status: "",
           message: <></>,
         });
-      }, 20000);
+      }, 10000);
   }, [showNotification.show]);
   return (
     <Transition
-      className="fixed right-5 top-5 space-y-4 w-1/2 sm:w-2/4 md:w-2/5 lg:w-1/3 shadow-xl rounded-xl"
+      className="fixed right-5 top-5 space-y-4 w-1/2 sm:w-2/4 md:w-2/5 lg:w-1/3 shadow-xl rounded-xl z-50"
       show={showNotification.show}
       enter="transition-all ease-in-out duration-500 delay-[200ms]"
       enterFrom="opacity-0 translate-x-6"
@@ -36,7 +36,7 @@ const FloatNotification = ({ showNotification, setShowNotification }) => {
                 className={`inline-flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg ${
                   showNotification.status === "success"
                     ? "bg-green-100 text-green-500"
-                    : "bg-red-100 text-red-500"
+                    : "bg-red-100 text-primaryColor"
                 }`}
               >
                 {showNotification.status === "success" ? (
@@ -51,7 +51,7 @@ const FloatNotification = ({ showNotification, setShowNotification }) => {
             </div>
             <button
               type="button"
-              className="inline-flex h-8 w-8 rounded-lg bg-gray-50 p-1.5 text-gray-400 hover:bg-gray-100 hover:text-orange-500 focus:ring-2 focus:ring-gray-300 "
+              className="inline-flex h-8 w-8 rounded-lg bg-gray-50 p-1.5 text-gray-400 hover:bg-gray-100 hover:text-primaryColor focus:ring-2 focus:ring-gray-300 "
               onClick={() => {
                 setShowNotification({
                   show: false,

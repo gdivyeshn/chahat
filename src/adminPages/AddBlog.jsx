@@ -7,11 +7,10 @@ import { ImageAPI, BlogAPI } from "../API";
 import Loading from "../components/Loading";
 import { useNavigate, useLocation } from "react-router-dom";
 import ImageUpload from "../components/ImageUpload";
-import { Rating } from "@material-tailwind/react";
 import MDInput from "../components/MDInput";
 import DatePicker from "../components/DatePicker";
-import { TrashIcon } from "@heroicons/react/24/outline";
-import TextAreaInput from "../components/TextArea";
+// import { TrashIcon } from "@heroicons/react/24/outline";
+// import TextAreaInput from "../components/TextArea";
 
 const AddBlog = () => {
   const [loading, setLoading] = useState(false);
@@ -256,7 +255,7 @@ const AddBlog = () => {
         </div>
         <div>
           <button
-            className="w-24 mt-2 p-2.5 flex-1 text-orange-500 border border-orange-500 hover:bg-orange-500 hover:text-white transition ease-in-out rounded-md outline-none ring-offset-2 ring-orange-600 focus:ring-2"
+            className="w-24 mt-2 p-2.5 flex-1 text-primaryColor border border-primaryColor hover:bg-primaryColor hover:text-white transition ease-in-out rounded-md outline-none ring-offset-2 ring-primaryColor focus:ring-2"
             onClick={() => navigate("/super_admin/dashboard/blog")}
           >
             Back
@@ -323,13 +322,13 @@ const AddBlog = () => {
             />
           </div>
 
-          <div>
+          {/* <div>
             <div className="flex justify-between">
               <label className="block text-gray-800 font-bold">Comments</label>
               <button
                 onClick={handleAddComment}
                 type="button"
-                className="text-center bg-orange-400 hover:bg-orange-500 text-white font-bold px-4 rounded"
+                className="text-center bg-primaryColor hover:bg-lightColor text-white font-bold px-4 rounded"
               >
                 Add
               </button>
@@ -346,7 +345,7 @@ const AddBlog = () => {
                   />
                   <TrashIcon
                     onClick={() => handleRemoveComment(ind)}
-                    className="w-5 h-5 text-red-500 hover:text-red-600"
+                    className="w-5 h-5 text-primaryColor hover:text-lightColor"
                   />
                 </div>
                 <TextAreaInput
@@ -359,19 +358,19 @@ const AddBlog = () => {
                 />
               </div>
             ))}
-          </div>
+          </div> */}
 
           <div className="flex gap-5 ">
             <button
               type="submit"
-              className="text-center w-full bg-orange-400 gap-2 items-center hover:bg-orange-500 text-white font-bold py-[9px] px-4 rounded"
+              className="text-center w-full bg-primaryColor gap-2 items-center hover:bg-lightColor text-white font-bold py-[9px] px-4 rounded"
             >
               Save
             </button>
             <button
               onClick={() => navigate("/super_admin/dashboard/blog")}
               type="button"
-              className="text-center w-full border border-orange-400 gap-2 items-center text-orange-500 font-bold py-[9px] px-4 rounded"
+              className="text-center w-full border border-primaryColor gap-2 items-center text-primaryColor font-bold py-[9px] px-4 rounded"
             >
               Cancel
             </button>

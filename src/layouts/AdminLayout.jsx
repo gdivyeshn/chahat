@@ -10,6 +10,7 @@ import {
   XCircleIcon,
   UserPlusIcon,
   ChatBubbleBottomCenterTextIcon,
+  PresentationChartBarIcon,
 } from "@heroicons/react/24/outline";
 import Notification from "../components/Notification";
 import LogOutModel from "../components/LogoutModel";
@@ -26,6 +27,12 @@ const AdminLayout = () => {
       activeName: undefined,
       icon: HomeIcon,
       link: "/super_admin/dashboard",
+    },
+    {
+      name: "Home Banner",
+      activeName: "home-banner",
+      icon: PresentationChartBarIcon,
+      link: "/super_admin/dashboard/home-banner",
     },
     {
       name: "Product",
@@ -69,12 +76,12 @@ const AdminLayout = () => {
         showSideBar ? "overflow-y-hidden" : "overflow-y-auto"
       }`}
     >
-      <div className="hidden md:flex flex-col w-64 bg-gray-800">
+      <div className="hidden md:flex flex-col w-64">
         <div className="fixed flex flex-col top-0 left-0 w-64 bg-gray-50 h-full border-r">
           <div className="flex items-center justify-center py-2 border-b">
             <div className="flex justify-center flex-col items-center">
               <img alt="logo" src={logo} className="w-16" />
-              <p className="font-bold text-2xl text-orange-500">
+              <p className="font-bold text-2xl text-primaryColor">
                 Chahat Namkeen
               </p>
             </div>
@@ -87,9 +94,9 @@ const AdminLayout = () => {
                     onClick={() => {
                       navigate(item.link);
                     }}
-                    className={`relative flex flex-row items-center h-11 focus:outline-none mx-3 rounded-md text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:bg-orange-300 ${
+                    className={`relative flex flex-row items-center h-11 focus:outline-none mx-3 rounded-md text-gray-600 hover:text-white border-l-4 border-transparent hover:bg-primaryColor ${
                       location.pathname.split("/")[3] === item.activeName &&
-                      "bg-orange-300 text-gray-800"
+                      "bg-primaryColor text-white"
                     }  pr-6`}
                   >
                     <span className="inline-flex justify-center items-center ml-4">
@@ -107,7 +114,7 @@ const AdminLayout = () => {
             onClick={() => {
               setLogOutModel(true);
             }}
-            className={`relative cursor-pointer flex flex-row items-center h-11 focus:outline-none mx-3 mb-3 rounded-md text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:bg-orange-300   pr-6`}
+            className={`relative cursor-pointer flex flex-row items-center h-11 focus:outline-none mx-3 mb-3 rounded-md text-gray-600 hover:text-white border-l-4 border-transparent hover:bg-primaryColor   pr-6`}
           >
             <span className="inline-flex justify-center items-center ml-4">
               <ArrowRightStartOnRectangleIcon className="font-semibold h-5 w-5" />
@@ -133,7 +140,7 @@ const AdminLayout = () => {
             <div className="flex items-center justify-center py-2 border-b">
               <div className="flex justify-center flex-col items-center">
                 <img alt="logo" src={logo} className="w-16" />
-                <p className="font-bold text-2xl text-orange-500">
+                <p className="font-bold text-2xl text-primaryColor">
                   Chahat Namkeen
                 </p>
               </div>
@@ -147,9 +154,9 @@ const AdminLayout = () => {
                         navigate(item.link);
                         setShowSideBar(false);
                       }}
-                      className={`relative flex flex-row items-center h-11 focus:outline-none mx-3 rounded-md text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:bg-orange-300 ${
+                      className={`relative flex flex-row items-center h-11 focus:outline-none mx-3 rounded-md text-gray-600 hover:text-white border-l-4 border-transparent hover:bg-primaryColor ${
                         location.pathname.split("/")[3] === item.activeName &&
-                        "bg-orange-300 text-gray-800"
+                        "bg-primaryColor text-white"
                       }  pr-6`}
                     >
                       <span className="inline-flex justify-center items-center ml-4">
@@ -167,7 +174,7 @@ const AdminLayout = () => {
               onClick={() => {
                 setLogOutModel(true);
               }}
-              className={`relative cursor-pointer flex flex-row items-center h-11 focus:outline-none mx-3 mb-3 rounded-md text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:bg-orange-300   pr-6`}
+              className={`relative cursor-pointer flex flex-row items-center h-11 focus:outline-none mx-3 mb-3 rounded-md text-gray-600 hover:text-white border-l-4 border-transparent hover:bg-primaryColor   pr-6`}
             >
               <span className="inline-flex justify-center items-center ml-4">
                 <ArrowRightStartOnRectangleIcon className="font-semibold h-5 w-5" />
@@ -182,7 +189,7 @@ const AdminLayout = () => {
               }}
               className="absolute top-0 -right-10"
             >
-              <XCircleIcon className="h-10 w-10 text-orange-400" />
+              <XCircleIcon className="h-10 w-10 text-primaryColor" />
             </button>
           </div>
         </div>

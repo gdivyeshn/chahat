@@ -198,7 +198,7 @@ const AdminCategories = () => {
             onClick={() => {
               setShowModel(true);
             }}
-            className="bg-orange-400 flex gap-2 items-center hover:bg-orange-500 text-white font-bold py-2 px-4 rounded"
+            className="bg-primaryColor flex gap-2 items-center hover:bg-lightColor text-white font-bold py-2 px-4 rounded"
           >
             <PlusIcon className="h-5 w-5" />
             Add Category
@@ -256,7 +256,7 @@ const AdminCategories = () => {
                                     setIsEdit(true);
                                   }}
                                 >
-                                  <PencilIcon className="w-5 h-5 text-orange-500 hover:text-orange-600" />
+                                  <PencilIcon className="w-5 h-5 text-gray-800" />
                                 </button>
                                 <button
                                   onClick={() => {
@@ -264,7 +264,7 @@ const AdminCategories = () => {
                                     setDeleteModal(true);
                                   }}
                                 >
-                                  <TrashIcon className="w-5 h-5 text-red-500 hover:text-red-600" />
+                                  <TrashIcon className="w-5 h-5 text-primaryColor" />
                                 </button>
                               </div>
                             </td>
@@ -327,7 +327,7 @@ const AdminCategories = () => {
               <div className="flex gap-5">
                 <button
                   type="submit"
-                  className="bg-orange-400 flex gap-2 items-center hover:bg-orange-500 text-white font-bold py-2 px-4 rounded"
+                  className="bg-primaryColor flex gap-2 items-center text-white font-bold py-2 px-4 rounded"
                 >
                   Save
                 </button>
@@ -341,7 +341,7 @@ const AdminCategories = () => {
                     }
                     resetForm();
                   }}
-                  className="bg-red-400 flex gap-2 items-center hover:bg-red-500 text-white font-bold py-2 px-4 rounded"
+                  className="border border-gray-800 flex gap-2 items-center text-gray-800 font-bold py-2 px-4 rounded"
                 >
                   Cancel
                 </button>

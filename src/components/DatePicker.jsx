@@ -22,7 +22,7 @@ function DatePicker({ label, name, onChange, value }) {
               <div
                 className={`w-full text-left px-2.5 ${
                   value ? "text-black" : "text-gray-400"
-                } border border-gray-300 focus:border-orange-600 py-2 rounded mt-2 outline-none focus:ring-orange-600 :ring-indigo-600`}
+                } border border-gray-300 focus:border-primaryColor py-2 rounded mt-2 outline-none focus:ring-primaryColor :ring-indigo-600`}
               >
                 {value ? moment(value).format("DD-MM-YYYY") : "Select Date"}
               </div>

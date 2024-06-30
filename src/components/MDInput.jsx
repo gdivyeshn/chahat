@@ -24,7 +24,11 @@ const MDInput = ({ value, onChange, viewOnly }) => {
   return (
     <div data-color-mode="light" className="normal-case" ref={ref}>
       {viewOnly ? (
-        <MarkdownEditor.Markdown source={value} />
+        value ? (
+          <MarkdownEditor.Markdown source={value} />
+        ) : (
+          "--"
+        )
       ) : (
         <MarkdownEditor
           height="150px"

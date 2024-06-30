@@ -25,7 +25,7 @@ function TextAreaInput({
         value={value}
         rows={5}
         onChange={onChange}
-        className="w-full border border-gray-300 focus:border-orange-600 py-2 pl-3 rounded mt-2 outline-none focus:ring-orange-600 :ring-indigo-600"
+        className="w-full border border-gray-300 focus:border-primaryColor py-2 pl-3 rounded mt-2 outline-none focus:ring-primaryColor :ring-indigo-600"
         {...props}
       />
       {error && <p className="text-red-500 text-sm">{errorText}</p>}

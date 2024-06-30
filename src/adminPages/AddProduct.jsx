@@ -8,7 +8,7 @@ import { CategoryAPI, ImageAPI, ProductAPI } from "../API";
 import Loading from "../components/Loading";
 import { useNavigate, useLocation } from "react-router-dom";
 import ImageUpload from "../components/ImageUpload";
-import { Rating } from "@material-tailwind/react";
+import { Rating } from "react-simple-star-rating";
 
 const AddProduct = () => {
   const [allCategories, setAllCategories] = useState([]);
@@ -258,7 +258,7 @@ const AddProduct = () => {
         </div>
         <div>
           <button
-            className="w-24 mt-2 p-2.5 flex-1 text-orange-500 border border-orange-500 hover:bg-orange-500 hover:text-white transition ease-in-out rounded-md outline-none ring-offset-2 ring-orange-600 focus:ring-2"
+            className="w-24 mt-2 p-2.5 flex-1 text-primaryColor border border-primaryColor hover:bg-primaryColor hover:text-white transition ease-in-out rounded-md outline-none ring-offset-2 ring-primaryColor focus:ring-2"
             onClick={() => navigate("/super_admin/dashboard/product")}
           >
             Back
@@ -326,9 +326,11 @@ const AddProduct = () => {
               <div>
                 <label className="block text-gray-800 font-bold">Rating</label>
                 <Rating
-                  value={values.rating}
-                  onChange={(e) => setFieldValue("rating", e)}
-                  ratedColor="orange"
+                  // emptyClassName="!flex"
+                  // fillClassName="!flex"
+                  size={30}
+                  initialValue={values.rating}
+                  onClick={(e) => setFieldValue("rating", e)}
                 />
               </div>
             </div>
@@ -337,14 +339,14 @@ const AddProduct = () => {
           <div className="flex mt-8 gap-5 ">
             <button
               type="submit"
-              className="text-center w-full bg-orange-400 gap-2 items-center hover:bg-orange-500 text-white font-bold py-[9px] px-4 rounded"
+              className="text-center w-full bg-primaryColor gap-2 items-center hover:bg-lightColor text-white font-bold py-[9px] px-4 rounded"
             >
               Save
             </button>
             <button
               onClick={() => navigate("/super_admin/dashboard/product")}
               type="button"
-              className="text-center w-full border border-orange-400 gap-2 items-center text-orange-500 font-bold py-[9px] px-4 rounded"
+              className="text-center w-full border border-primaryColor gap-2 items-center text-primaryColor font-bold py-[9px] px-4 rounded"
             >
               Cancel
             </button>

@@ -134,7 +134,7 @@ function Login() {
               ) : (
                 <button
                   onClick={submitForm}
-                  className="cursor-pointer py-2 px-4 block mt-6 bg-orange-500 text-white font-bold w-full text-center rounded"
+                  className="cursor-pointer py-2 px-4 block mt-6 bg-primaryColor text-white font-bold w-full text-center rounded"
                 >
                   Login
                 </button>

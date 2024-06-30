@@ -197,7 +197,7 @@ const AddLead = () => {
         </div>
         <div>
           <button
-            className="w-24 mt-2 p-2.5 flex-1 text-orange-500 border border-orange-500 hover:bg-orange-500 hover:text-white transition ease-in-out rounded-md outline-none ring-offset-2 ring-orange-600 focus:ring-2"
+            className="w-24 mt-2 p-2.5 flex-1 text-primaryColor border border-primaryColor hover:bg-primaryColor hover:text-white transition ease-in-out rounded-md outline-none ring-offset-2 ring-primaryColor focus:ring-2"
             onClick={() => navigate("/super_admin/dashboard/lead")}
           >
             Back
@@ -251,7 +251,7 @@ const AddLead = () => {
           <div className="md:flex gap-5 w-full mt-8">
             <div className="w-full">
               <InputText
-                type="text"
+                type="number"
                 id="phone_number"
                 label="Phone Number"
                 name="phone_number"
@@ -277,14 +277,14 @@ const AddLead = () => {
           <div className="flex mt-8 gap-5 ">
             <button
               type="submit"
-              className="text-center w-full bg-orange-400 gap-2 items-center hover:bg-orange-500 text-white font-bold py-[9px] px-4 rounded"
+              className="text-center w-full bg-primaryColor gap-2 items-center hover:bg-lightColor text-white font-bold py-[9px] px-4 rounded"
             >
               Save
             </button>
             <button
               onClick={() => navigate("/super_admin/dashboard/lead")}
               type="button"
-              className="text-center w-full border border-orange-400 gap-2 items-center text-orange-500 font-bold py-[9px] px-4 rounded"
+              className="text-center w-full border border-primaryColor gap-2 items-center text-primaryColor font-bold py-[9px] px-4 rounded"
             >
               Cancel
             </button>

@@ -4,6 +4,7 @@ import { Navigate, createBrowserRouter } from "react-router-dom";
 const Login = React.lazy(() => import("../../adminPages/Login"));
 const AdminLayout = React.lazy(() => import("../../layouts/AdminLayout"));
 const Dashboard = React.lazy(() => import("../../adminPages/Dashboard"));
+const HomeBanner = React.lazy(() => import("../../adminPages/HomeBanner"));
 const AdminProducts = React.lazy(() =>
   import("../../adminPages/AdminProducts")
 );
@@ -34,8 +35,13 @@ const router = createBrowserRouter([
       { path: "", element: <Home /> },
       { path: "about-us", element: <AboutUs /> },
       { path: "namkeen", element: <Namkeen /> },
-      { path: "blogs", element: <Blogs /> },
-      { path: "blog-details", element: <BlogDetails /> },
+      {
+        path: "blogs",
+        children: [
+          { path: "", element: <Blogs /> },
+          { path: ":id", element: <BlogDetails /> },
+        ],
+      },
       { path: "contact-us", element: <ContactUs /> },
     ],
   },
@@ -49,6 +55,7 @@ const router = createBrowserRouter([
         element: <AdminLayout />,
         children: [
           { path: "", element: <Dashboard /> },
+          { path: "home-banner", element: <HomeBanner /> },
           {
             path: "product",
             children: [

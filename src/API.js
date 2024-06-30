@@ -1,5 +1,6 @@
-// const baseUrl = "http://localhost:4000";
-const baseUrl = "https://chahat-backend.onrender.com";
+const baseUrl = "http://192.168.129.181:5000";
+// const baseUrl = "https://chahat-backend.onrender.com";
+export const OtherDetailsAPI = baseUrl + "/other-details";
 export const ProductAPI = baseUrl + "/products";
 export const BlogAPI = baseUrl + "/blogs";
 export const CategoriesAPI = baseUrl + "/categories";

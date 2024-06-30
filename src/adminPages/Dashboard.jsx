@@ -51,15 +51,17 @@ const Dashboard = () => {
       setLoading(true);
       fetch(ProductAPI, {
         method: "POST",
-        headers: { Authorization: token },
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: token,
+        },
+        body: JSON.stringify({ limit: 5 }),
       })
         .then((res) => res.json())
         .then((data) => {
           setLoading(false);
           if (data?.status === "success") {
-            setAllProducts(
-              data.data?.filter((i) => !i.exclusive_product).slice(0, 5)
-            );
+            setAllProducts(data.data);
             setProductCount(data?.data?.length);
           } else {
             setShowNotification({
@@ -78,7 +80,11 @@ const Dashboard = () => {
       setLoading(true);
       fetch(CategoryAPI, {
         method: "POST",
-        headers: { Authorization: token },
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: token,
+        },
+        body: JSON.stringify({ limit: 5 }),
       })
         .then((res) => res.json())
         .then((data) => {
@@ -107,7 +113,7 @@ const Dashboard = () => {
           "Content-Type": "application/json",
           Authorization: token,
         },
-        body: JSON.stringify({ type: "contact" }),
+        body: JSON.stringify({ type: "contact", limit: 5 }),
       })
         .then((res) => res.json())
         .then((data) => {
@@ -151,7 +157,7 @@ const Dashboard = () => {
           <div
             key={ind}
             onClick={() => navigate(item?.link)}
-            className="hover:bg-orange-400 transition-all duration-200 hover:text-white border cursor-pointer flex items-center justify-between rounded-xl px-5 py-5"
+            className="hover:bg-primaryColor transition-all duration-200 hover:text-white border cursor-pointer flex items-center justify-between rounded-xl px-5 py-5"
           >
             <div>
               <h6 className="font-semibold text-lg">{item.name}</h6>
@@ -176,7 +182,7 @@ const Dashboard = () => {
                 <h2 className="w-full font-semibold text-gray-800">Products</h2>
                 <div className="w-24">
                   <button
-                    className="w-24 p-2.5 flex-1 text-orange-500 border border-orange-500 hover:bg-orange-500 hover:text-white transition ease-in-out rounded-md outline-none ring-offset-2 ring-orange-600 focus:ring-2"
+                    className="w-24 p-2.5 flex-1 text-primaryColor border border-primaryColor hover:bg-primaryColor hover:text-white transition ease-in-out rounded-md outline-none ring-offset-2 ring-primaryColor focus:ring-2"
                     onClick={() => {
                       navigate("/super_admin/dashboard/product");
                     }}
@@ -225,7 +231,7 @@ const Dashboard = () => {
                               <div className="flex items-center">
                                 <div className="w-10 h-10 flex-shrink-0 mr-2 sm:mr-3">
                                   <img
-                                    className="rounded-full object-contain h-10 w-10 border border-orange-500"
+                                    className="rounded-full object-contain h-10 w-10 border border-primaryColor"
                                     src={item.imgUri}
                                     alt="Alex Shatov"
                                   />
@@ -280,7 +286,7 @@ const Dashboard = () => {
                 <h2 className="w-full font-semibold text-gray-800">Category</h2>
                 <div className="w-24">
                   <button
-                    className="w-24 p-2.5 flex-1 text-orange-500 border border-orange-500 hover:bg-orange-500 hover:text-white transition ease-in-out rounded-md outline-none ring-offset-2 ring-orange-600 focus:ring-2"
+                    className="w-24 p-2.5 flex-1 text-primaryColor border border-primaryColor hover:bg-primaryColor hover:text-white transition ease-in-out rounded-md outline-none ring-offset-2 ring-primaryColor focus:ring-2"
                     onClick={() => {
                       navigate("/super_admin/dashboard/category");
                     }}
@@ -342,7 +348,7 @@ const Dashboard = () => {
                 <h2 className="w-full font-semibold text-gray-800">Lead</h2>
                 <div className="w-24">
                   <button
-                    className="w-24 p-2.5 flex-1 text-orange-500 border border-orange-500 hover:bg-orange-500 hover:text-white transition ease-in-out rounded-md outline-none ring-offset-2 ring-orange-600 focus:ring-2"
+                    className="w-24 p-2.5 flex-1 text-primaryColor border border-primaryColor hover:bg-primaryColor hover:text-white transition ease-in-out rounded-md outline-none ring-offset-2 ring-primaryColor focus:ring-2"
                     onClick={() => {
                       navigate("/super_admin/dashboard/lead");
                     }}
@@ -401,7 +407,7 @@ const Dashboard = () => {
                                 className={`font-medium text-center ${
                                   (lead?.status === "todo" && "text-red-500") ||
                                   (lead?.status === "in-progress" &&
-                                    "text-orange-500") ||
+                                    "text-primaryColor") ||
                                   (lead?.status === "completed" &&
                                     "text-green-500")
                                 }`}

@@ -154,7 +154,7 @@ const AdminSubscribeLeads = () => {
                                     setLeadId(lead._id);
                                   }}
                                 >
-                                  <TrashIcon className="w-5 h-5 text-red-500 hover:text-red-600" />
+                                  <TrashIcon className="w-5 h-5 text-primaryColor hover:lightColor" />
                                 </button>
                               </div>
                             </td>
