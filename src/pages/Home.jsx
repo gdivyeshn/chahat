@@ -152,7 +152,7 @@ const Home = () => {
           <div className="grid gap-5 lg:gap-14 sm:grid-cols-2 lg:grid-cols-4">
             {recantProducts.slice(0, 4).map((item, ind) => (
               <div key={ind} className="flex justify-center">
-                <div className="p-4 space-y-2 rounded-2xl bg-[#FAF9F2] shadow-lg font-semibold w-fit px-8 text-center">
+                <div className="p-4 space-y-2 rounded-2xl bg-[#FAF9F2] shadow-lg font-semibold max-w-72 w-full px-8 text-center">
                   <div className="flex justify-center p-4 px-8">
                     <img src={item.imgUri} className="max-h-48" alt="" />
                   </div>
